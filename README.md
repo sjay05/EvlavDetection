@@ -7,7 +7,7 @@ and then returns a percentage amount of how much of the files are plagiarised, a
 is done using Tesseract ORC by Google (and some OpenCV), and the plagiarism check is done using the PySimple library. 
 Thank you for checking out our project. -Roozbeh
 
-TEAM: SANJAY SINAVASAN
-      ROOZBEH ALI
-      ANDREW WANG
+TEAM: SANJAY SINAVASAN,
+      ROOZBEH ALI,
+      ANDREW WANG,
       MATTHEW TANG
