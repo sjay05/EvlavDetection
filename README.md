@@ -2,7 +2,7 @@
 
 > An online image to text plagiarism detector.
 
-![test](https://ibb.co/4VKWNVC)
+![test](https://i.ibb.co/P6FxC6J/Screen-Shot-2021-06-27-at-11-19-50-AM.png)
 
 ## Idea
 
@@ -28,4 +28,4 @@ Team: Sanjay Seenivasan, Roozbeh Ali, Andrew Tang, Matthew Tang
 
 ## More Pictures
 
-![test2](https://ibb.co/GkKLm38)
+![test2](https://i.ibb.co/4M6GkgX/Screen-Shot-2021-06-27-at-11-19-40-AM.png)
