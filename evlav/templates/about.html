@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Shop Item - Start Bootstrap Template</title>
+        <title>Evlav Detection</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Bootstrap icons-->
@@ -42,36 +42,13 @@
         <section class="py-5">
             <div class="container px-4 px-lg-5 my-5">
                 <div class="row gx-4 gx-lg-5 align-items-center d-flex justify-content-center">
-                    <!-- <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="https://dummyimage.com/600x700/dee2e6/6c757d.jpg" alt="..." /></div> -->
                     <div class="col-md-6">
-                        <!-- <div class="small mb-1">SKU: BST-498</div> -->
-                        <h1 class="display-5 fw-bolder" style="text-align: center;">Insert Files for Analysis</h1>
-                        <!-- <div class="fs-5 mb-5"> -->
-                        <!--     <span class="text-decoration-line-through">$45.00</span> -->
-                        <!--     <span>$40.00</span> -->
-                        <!-- </div> -->
+                        <h1 class="display-5 fw-bolder" style="text-align: center;">About this Website</h1>
                         <br>
-                        <p class="lead" style="text-align: center;">Upload two PNG files for plagiarism analysis:</p>
+                        <p class="lead" style="text-align: left;">This website allows you to convert images which contain text (perhaps an essay or something of the sort) into txt files using Tesseract OCR by Google, along with some help from OpenCV. You can then use two txt files in our plagiarism detection area to see what percent of those files are plagiarising off each other. This is done using PySimilar. This project is our submission in the Hack3 hackathon, on June 26, 2021.</p>
                         <br>
-                        {% block content %}
-                        <form action="/upload/" method="post" enctype="multipart/form-data">
-                           {% csrf_token %}
-                           <input type="file" class="form-control-file" name="fa">
-                           <br>
-                           <br>
-                           <input type="file" class="form-control-file" name="fb">
-                           <br>
-                           <br>
-                           <button type="submit" class="btn btn-primary mb-2">Submit</button>
-                        </form>
-                        {% endblock %}
-                        <!-- <div class="d-flex"> -->
-                        <!--     <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" /> -->
-                        <!--     <button class="btn btn-outline-dark flex-shrink-0" type="button"> -->
-                        <!--         <i class="bi-cart-fill me-1"></i> -->
-                        <!--         Add to cart -->
-                        <!--     </button> -->
-                        <!-- </div> -->
+                        <a><img src="https://i.ibb.co/wSp3bvK/9727bc22086923-56045779b4be0.png"></a>
+                    </div>
                     </div>
                 </div>
             </div>

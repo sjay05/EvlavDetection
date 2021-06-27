@@ -38,10 +38,18 @@ class IndexView(View):
   def get(self, request, *args, **kwargs):
     return render(request, self.html_file)
 
+class AboutView(View):
+  html_file = "about.html"
+
+  def get(self, request, *args, **kwargs):
+    return render(request, self.html_file)
+  
+
 def remove_non_ascii(text):
     return unidecode(unicode(text, encoding = "utf-8"))
 
 all = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ' ']
+all_caps = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', ' ']
 
 def upload(request):
   
@@ -74,11 +82,11 @@ def upload(request):
     t2 = ""
 
     for c in text_file1:
-      if c in all:
+      if c in all or c in all_caps:
         t1 += c
 
     for c in text_file2:
-      if c in all:
+      if c in all or c in all_caps:
         t2 += c
 
     res = compare(t1, t2)
@@ -94,3 +102,42 @@ def upload(request):
     context['file2'] = t2
 
   return render(request, "result.html", context)
+
+class ToolsView(View):
+  html_file = "tools.html"
+
+  def get(self, request, *args, **kwargs):
+    return render(request, self.html_file)  
+
+def tools_upload(request):
+  
+  context = {}
+
+  if (request.method == 'POST'):
+    file1 = request.FILES['fa']
+
+    fs = OverwriteStorage()
+
+    file1.name = fs._save(file1.name, file1)
+
+    file1_img = cv2.imread(f'./media/{file1.name}')
+
+    # file1_img = get_greyscale(file1_img)
+#    file1_img = thresholding(file1_img)
+    # file1_img = remove_noise(file1_img)
+
+    # file2_img = get_greyscale(file2_img)
+#     file2_img = thresholding(file2_img)
+    # file2_img = remove_noise(file2_img)
+
+    text_file1 = ocr_core(file1_img)
+
+    t1 = ""
+
+    for c in text_file1:
+      if c in all or c in all_caps:
+        t1 += c
+
+    context['file1'] = t1
+
+  return render(request, "tools_result.html", context)

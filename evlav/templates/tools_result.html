@@ -45,26 +45,16 @@
                     <!-- <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="https://dummyimage.com/600x700/dee2e6/6c757d.jpg" alt="..." /></div> -->
                     <div class="col-md-6">
                         <!-- <div class="small mb-1">SKU: BST-498</div> -->
-                        <h1 class="display-5 fw-bolder" style="text-align: center;">Insert Files for Analysis</h1>
+                        <h3 class="display-7 fw-bolder">Results:</h3>
                         <!-- <div class="fs-5 mb-5"> -->
                         <!--     <span class="text-decoration-line-through">$45.00</span> -->
                         <!--     <span>$40.00</span> -->
                         <!-- </div> -->
                         <br>
-                        <p class="lead" style="text-align: center;">Upload two PNG files for plagiarism analysis:</p>
+                        <p class="lead" style="font-size: 20px;">Image to Parsed Text:</p>
+                        <code>{{file1}}</code>
                         <br>
-                        {% block content %}
-                        <form action="/upload/" method="post" enctype="multipart/form-data">
-                           {% csrf_token %}
-                           <input type="file" class="form-control-file" name="fa">
-                           <br>
-                           <br>
-                           <input type="file" class="form-control-file" name="fb">
-                           <br>
-                           <br>
-                           <button type="submit" class="btn btn-primary mb-2">Submit</button>
-                        </form>
-                        {% endblock %}
+                        <br>
                         <!-- <div class="d-flex"> -->
                         <!--     <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" /> -->
                         <!--     <button class="btn btn-outline-dark flex-shrink-0" type="button"> -->
@@ -79,4 +69,6 @@
         </section>
     </body>
 </html>
+
+
 
