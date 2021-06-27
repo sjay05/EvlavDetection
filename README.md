@@ -7,7 +7,7 @@ and then returns a percentage amount of how much of the files are plagiarised, a
 is done using Tesseract OCR by Google (and some OpenCV), and the plagiarism check is done using the PySimple library. The
 website itself was created using the Python Django framework. Thank you for checking out our project. -Roozbeh
 
-TEAM: SANJAY SINAVASAN,
+TEAM: SANJAY SEENIVASAN,
       ROOZBEH ALI,
       ANDREW WANG,
       MATTHEW TANG
