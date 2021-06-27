@@ -54,15 +54,15 @@
                         <p class="lead" style="text-align: center;">Upload two PNG files for plagiarism analysis:</p>
                         <br>
                         {% block content %}
-                        <form action="/upload/" method="post" enctype="multipart/form-data" style="text-align: center;">
+                        <form action="/upload/" method="post" enctype="multipart/form-data" style="text-align: center;" id="submitform">
                            {% csrf_token %}
-                           <input type="file" class="form-control-file" name="fa">
+                           <input type="file" class="form-control-file" name="fa" required>
                            <br>
                            <br>
-                           <input type="file" class="form-control-file" name="fb">
+                           <input type="file" class="form-control-file" name="fb" required>
                            <br>
                            <br>
-                           <button type="submit" class="btn btn-primary mb-2">Submit</button>
+                           <button type="submit" class="btn btn-primary mb-2" onclick="loadFunction()">Submit</button>
                         </form>
                         {% endblock %}
                         <!-- <div class="d-flex"> -->

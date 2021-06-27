@@ -20,7 +20,7 @@ class OverwriteStorage(FileSystemStorage):
         return available_name
 
 def ocr_core(img):
-  text = pytesseract.image_to_string(img)
+  text = pytesseract.image_to_string(img, lang="eng")
   return text
 
 def get_greyscale(image):
@@ -48,7 +48,7 @@ class AboutView(View):
 def remove_non_ascii(text):
     return unidecode(unicode(text, encoding = "utf-8"))
 
-all = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ' ']
+all = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ' ', '\n']
 all_caps = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', ' ']
 
 def upload(request):
@@ -122,13 +122,17 @@ def tools_upload(request):
 
     file1_img = cv2.imread(f'./media/{file1.name}')
 
+    ret_type = request.POST['gridRadios']
+
+    if (ret_type == "greyscale"):
+      file1_img = get_greyscale(file1_img)
+
+    if (ret_type == "noise"):
+      file1_img = remove_noise(file1_img)
+
     # file1_img = get_greyscale(file1_img)
 #    file1_img = thresholding(file1_img)
     # file1_img = remove_noise(file1_img)
-
-    # file2_img = get_greyscale(file2_img)
-#     file2_img = thresholding(file2_img)
-    # file2_img = remove_noise(file2_img)
 
     text_file1 = ocr_core(file1_img)
 
