@@ -54,7 +54,7 @@
                         <p class="lead" style="text-align: center;">Upload a Image for Textual Parsing:</p>
                         <br>
                         {% block content %}
-                        <form action="/tools_result/" method="post" enctype="multipart/form-data">
+                        <form action="/tools_result/" method="post" enctype="multipart/form-data" style="padding-left: 40px;">
                            {% csrf_token %}
                            <input type="file" class="form-control-file" name="fa">
                            <br>
