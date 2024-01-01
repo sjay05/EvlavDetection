@@ -1,6 +1,6 @@
 # EvlavDetection
 
-> An online image to text plagiarism detector.
+> Real Time Car Theft Monitoring and Alert System with Raspberry PI 3
 
 ![test](https://i.ibb.co/P6FxC6J/Screen-Shot-2021-06-27-at-11-19-50-AM.png)
 
