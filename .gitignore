@@ -2,4 +2,5 @@ env/*
 evlav/__pycache__/
 evlav_detect/__pycache__/
 evlav/media/*
+.DS_Store
 
